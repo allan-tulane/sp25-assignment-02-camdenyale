@@ -23,10 +23,25 @@ def parens_match_iterative(mylist):
     False
     """
     ### TODO
+    def iterate(parens_update, inital, mylist):
+        state = initial
+        for item in my_list:
+            state = parens_update(item, state)
+        return state
     return iterate(parens_update, 0, mylist) == 0
     ###
 
+def plus(x, y):
+    return x + y
 
+def reduce(f, id, a):
+    if len(a) == 0:
+        return id_
+    elif len(a) == 1:
+        return a[0]
+    else:
+        return f(reduce(f, id_, a[:len(a) // 2]), reduce(f, id_, a[len(a) // 2]
+                                                         
 def parens_update(current_output, next_input):
     """
     This function will be passed to the `iterate` function to 
@@ -77,6 +92,7 @@ def parens_match_scan(mylist):
     
     """
     ###TODO
+    mapped = list(map(paren_map, mylist))
     history, last = scan(plus, 0, list(map(paren_map, mylist)))
     return last == 0 and reduce(min_f, 0, history) >= 0
     ###
