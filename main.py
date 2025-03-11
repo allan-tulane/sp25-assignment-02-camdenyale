@@ -46,7 +46,7 @@ def reduce(f, id_, a):
     elif len(a) == 1:
         return a[0]
     else:
-        return f(reduce(f, id_, a[:len(a) // 2]), reduce(f, id_, a[len(a) // 2]))
+        return f(reduce(f, id_, a[:len(a) // 2]), reduce(f, id_, a[len(a) // 2:]))
 
 def parens_update(current_output, next_input):
     """
